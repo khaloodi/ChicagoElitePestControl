@@ -1,11 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chicago Elite Pest Control</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <p>Hello World!</p>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo"><a href="#" style="text-decoration: none; color:black;">Chicago Elite</a></div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul id="nav-links">
+      <li><a href="#features">Why Us</a></li>
+      <li><a href="#how-it-works">Process</a></li>
+      <li><a href="#packages">Services</a></li>
+      <li><a href="#booking">Book Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="videos/pest-hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Chicago Elite Pest Control</h1>
+    <p>Protect Your Home. Eliminate Pests for Good.</p>
+    <h2>Fast, Safe, and Reliable Pest Solutions</h2>
+    <p>Serving Chicagoland homes & businesses with expert care.</p>
+    <a href="#booking" class="cta-button">Get a Free Inspection</a>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section id="features">
+  <h2>Why Choose Us</h2>
+  <div class="features">
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/000000/clock.png" alt="Fast Response"/>
+      <h3>Fast Response</h3>
+      <p>Same-day and next-day service available across Chicagoland.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/000000/leaf.png" alt="Eco Friendly"/>
+      <h3>Eco-Friendly Treatments</h3>
+      <p>Safe for your family, pets, and the environment.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/000000/license.png" alt="Licensed"/>
+      <h3>Licensed & Insured</h3>
+      <p>Fully certified technicians who get the job done right.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/color/96/000000/thumb-up.png" alt="Guaranteed"/>
+      <h3>Satisfaction Guaranteed</h3>
+      <p>Your comfort is our top priority — we stand behind every service.</p>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works">
+  <h2>Our Process</h2>
+  <div class="steps">
+    <div class="step">
+      <img src="https://img.icons8.com/color/48/000000/calendar.png" alt="Book"/>
+      <h3>1. Schedule Inspection</h3>
+      <p>Book online or by phone at your convenience.</p>
+    </div>
+    <div class="step">
+      <img src="https://img.icons8.com/color/48/000000/search.png" alt="Inspection"/>
+      <h3>2. On-Site Assessment</h3>
+      <p>Our expert inspects your property to identify pests and causes.</p>
+    </div>
+    <div class="step">
+      <img src="https://img.icons8.com/color/48/000000/spray.png" alt="Treatment"/>
+      <h3>3. Treatment</h3>
+      <p>Targeted, safe, and effective pest elimination methods.</p>
+    </div>
+    <div class="step">
+      <img src="https://img.icons8.com/color/48/000000/repeat.png" alt="Follow up"/>
+      <h3>4. Follow-Up & Prevention</h3>
+      <p>We ensure pests stay gone with ongoing protection plans.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="packages">
+  <h2>Our Services</h2>
+  <div class="packages">
+    <div class="package">
+      <h3>General Pest Control — $99</h3>
+      <p>Effective removal of roaches, ants, spiders, and other common pests.</p>
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+    <div class="package">
+      <h3>Bed Bug Treatment</h3>
+      <p>Targeted solutions that eliminate bed bugs from every corner of your home.</p>
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+    <div class="package">
+      <h3>Termite Protection</h3>
+      <p>Advanced treatments to protect your property’s foundation and value.</p>
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+    <div class="package">
+      <h3>Rodent Control</h3>
+      <p>Safe and humane solutions to keep mice and rats away for good.</p>
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section id="booking">
+  <h2>Book Your Pest Control Service</h2>
+  <form class="booking-form">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="text" placeholder="Address" required>
+    <select required>
+      <option value="">Select Service</option>
+      <option value="general">General Pest Control</option>
+      <option value="bedbugs">Bed Bug Service</option>
+      <option value="termites">Termite Service</option>
+      <option value="rodents">Rodent Service</option>
+    </select>
+    <textarea placeholder="Describe your pest issue"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Chicago Elite Pest Control. All rights reserved.
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>
