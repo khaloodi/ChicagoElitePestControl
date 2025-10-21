@@ -1,0 +1,330 @@
+/* ============================= ROOT VARIABLES ============================= */
+:root {
+  --primary-color: #2E7D32;  /* Deep green */
+  --accent-color: #FFD54F;   /* Gold */
+}
+
+/* ============================= BASE STYLES ============================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+/* ============================= NAVBAR ============================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+#nav-links li {
+  position: relative;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ============================= MOBILE NAV ============================= */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    background: rgba(255,255,255,0.97);
+    border-top: 1px solid #eee;
+  }
+
+  #nav-links.show {
+    max-height: 600px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding-left: 1.5rem;
+    background: transparent;
+    flex-direction: column;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: flex;
+  }
+
+  .dropdown-menu li a {
+    background: white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .dropdown-menu li a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ============================= HERO SECTION ============================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #1B5E20;
+}
+
+/* ============================= CONTENT CARDS ============================= */
+.features, .steps, .packages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature, .step, .package {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+}
+
+/* ============================= ICONS FOR FEATURES ============================= */
+/* These match pest control services */
+.feature img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.step img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+/* ============================= BOOKING FORM ============================= */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 1rem;
+}
+
+.booking-form input, 
+.booking-form select, 
+.booking-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background: #1B5E20;
+}
+
+/* ============================= FOOTER ============================= */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ============================= MOBILE CONTENT CARDS ============================= */
+@media (max-width: 768px) {
+  .feature, .step, .package {
+    width: 100%;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    max-width: 90%;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
